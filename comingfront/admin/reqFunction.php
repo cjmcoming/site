@@ -265,6 +265,12 @@
 	}
 
 
+	/**
+	* 递归获取所有子栏目 id 函数
+	* @param  (array)$rs 栏目数据数组
+	*         (string)$id 父栏目 id
+	* @return  (array) 所有子栏目 id
+	*/
 	function getColumnSon($rs = false, $id = false) {
 		if(!$rs || !$id || !count($rs) ) {
 			return array();
@@ -285,7 +291,8 @@
 
 	/**
 	* 获取文章列表数据函数
-	* @param  (number)$start 开始位置
+	* @param  (number)$id 指定栏目 id，如果为 0 则获取所有栏目文章
+	* 		  (number)$start 开始位置
 	*         (number)$num 需要条数
 	* @return  (array)[(array)列表数据, (number)总条数]
 	*/
